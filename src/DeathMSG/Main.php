@@ -47,7 +47,7 @@ class Main extends PluginBase implements Listener {
                   $killer->sendTip(TextFormat::GREEN." You killed ". TextFormat::DARK_AQUA.$player->getName(). TextFormat::GREEN. " with" . TextFormat::YELLOW.$killer->getHealth(). TextFormat::GREEN." Hearts remeining! ");
                   $player->getLevel()->addSound($Launch);
                   $killer->getLevel()->addSound($click);
-             $killer->setHealth($killer->setMaxHealth());
+             $killer->setHealth($killer->getMaxHealth());
             
 		}
             }
