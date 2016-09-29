@@ -1,5 +1,6 @@
 <?php
 namespace DeathMSG;
+
 use pocketmine\network\protocol\AddEntityPacket;
 use pocketmine\network\protocol\SetTimePacket;
 use pocketmine\network\protocol\TextPacket;
@@ -22,15 +23,13 @@ use pocketmine\Server;
 use pocketmine\math\Vector3;
 use pocketmine\level\sound\ClickSound;
 use pocketmine\level\sound\LaunchSound;
+
 class Main extends PluginBase implements Listener {
- 
-    
+     
   public function onEnable()
   {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
-    $this->getLogger()->info("DeathMSG has been enabled.");
- 
-           
+    $this->getLogger()->info("DeathMSG has been enabled.");   
     }
     
     public function onDeath(PlayerDeathEvent $event)  {
@@ -38,7 +37,7 @@ class Main extends PluginBase implements Listener {
         if($cause instanceof EntityDamageByEntityEvent) {
             $player = $event->getEntity();
             $killer = $cause->getDamager();
- $p = $event->getEntity();
+	    $p = $event->getEntity();
              if ($killer instanceof Player){
                   $click = new ClickSound($killer);
                   $Launch = new LaunchSound($player);
